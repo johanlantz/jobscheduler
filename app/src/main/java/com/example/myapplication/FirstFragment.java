@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.job.JobInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.myapplication.databinding.FragmentFirstBinding;
+
+import java.util.List;
 
 public class FirstFragment extends Fragment {
 
@@ -27,9 +30,12 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if (JobSchedulerManager.getPendingJobs(getContext()).isEmpty()) {
+        List<JobInfo> jobs = JobSchedulerManager.getPendingJobs(getContext());
+        if (jobs.isEmpty()) {
             binding.buttonFirst.setText("Start Jobscheduler");
         } else {
+            JobInfo job= jobs.get(0);
+            binding.textviewFirst.setText("Job info\nisPersisted: " + job.isPersisted() + "\nisPeriodic: " + job.isPeriodic() + "\nInterval: " + job.getIntervalMillis()/1000);
             binding.buttonFirst.setText("Jobscheduler active - Press to restart");
         }
 
@@ -38,8 +44,8 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 JobSchedulerManager.scheduleJobs(getContext());
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                NavHostFragment.findNavController(FirstFragment.this).popBackStack();
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.FirstFragment);
             }
         });
     }
