@@ -1,13 +1,19 @@
 package com.example.myapplication;
 
+import android.content.ClipData;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Environment;
 import android.view.View;
 
+import androidx.core.content.FileProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -17,6 +23,8 @@ import com.example.myapplication.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,8 +47,24 @@ public class MainActivity extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Uri logUri;
+                File logFile = new File(getFilesDir(), "logfile.txt");
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    logUri = FileProvider.getUriForFile(getApplicationContext(), "com.example.myapplication.fileprovider", logFile);
+                } else {
+                    logUri = Uri.fromFile(logFile);
+                }
+                Intent share = new Intent();
+                share.setAction(Intent.ACTION_SEND);
+                share.setType("application/txt");
+                share.putExtra(Intent.EXTRA_STREAM, logUri);
+                share.setClipData(ClipData.newRawUri("", logUri));
+                share.addFlags(
+                        Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                startActivity(Intent.createChooser(share, "Share file"));
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //        .setAction("Action", null).show();
             }
         });
     }

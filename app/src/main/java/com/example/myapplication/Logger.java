@@ -2,6 +2,12 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+
+import androidx.core.content.FileProvider;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -66,8 +72,14 @@ public class Logger {
         Handler logHandler;
         log.getParent().setLevel(Level.FINE);
         final int MAX_LOG_COUNT = 1;
+
+        File logDir = new File(context.getFilesDir() + File.separator + "my_logs/");
+        logDir.mkdirs();
+        //File logDir = new File(context.getFilesDir() + File.separator);
+
+
         if (!isFileHandlerActive()) {
-            String filePath = context.getFilesDir() + File.separator + "logfile.txt";
+            String filePath = logDir + "/logfile.txt";
 
             try {
                 logHandler = new FileHandler(filePath, 100 * 1000000, MAX_LOG_COUNT, true);

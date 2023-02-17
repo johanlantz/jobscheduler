@@ -7,6 +7,6 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Press Next to start</string>
+    <string name="hello_first_fragment">Press Next to start and mail icon to send logfile</string>
     <string name="hello_second_fragment">JobScheduler running. Arg: %1$s</string>
 </resources>
