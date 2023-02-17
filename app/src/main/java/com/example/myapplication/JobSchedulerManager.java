@@ -6,24 +6,30 @@ import android.content.ComponentName;
 import android.content.Context;
 
 import org.json.JSONObject;
+
+import java.util.List;
 import java.util.logging.Logger;
 
 public class JobSchedulerManager {
 
     private static final Logger log = Logger.getLogger(JobSchedulerManager.class.getSimpleName());
-    private static final int SENSOR_JOB = 1002;
+    private static final int SENSOR_JOB = 1099;
 
     private static BatterySensor batterySensor;
 
     public static void scheduleJobs(Context context) {
         log.info("Scheduling background jobs.");
-        if(!((JobScheduler)context.getSystemService(Context.JOB_SCHEDULER_SERVICE)).getAllPendingJobs().isEmpty()) {
+        if(!(getPendingJobs(context)).isEmpty()) {
             log.info("JobScheduler already has jobs scheduled, they will be rescheduled by the system.");
         }
         com.example.myapplication.Logger.start(context);
         batterySensor = BatterySensor.getSensor(context);
         batterySensor.start();
         scheduleSensorJob(context);
+    }
+
+    public static List<JobInfo> getPendingJobs(Context context) {
+        return ((JobScheduler)context.getSystemService(Context.JOB_SCHEDULER_SERVICE)).getAllPendingJobs();
     }
 
     public static void cancelJobs(Context context) {

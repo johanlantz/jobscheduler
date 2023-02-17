@@ -27,6 +27,13 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        if (JobSchedulerManager.getPendingJobs(getContext()).isEmpty()) {
+            binding.buttonFirst.setText("Start Jobscheduler");
+        } else {
+            binding.buttonFirst.setText("Jobscheduler active - Press to restart");
+        }
+
+
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

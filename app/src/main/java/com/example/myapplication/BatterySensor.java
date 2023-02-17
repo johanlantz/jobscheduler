@@ -59,15 +59,6 @@ public class BatterySensor  {
     public void poll(String action) {
         Intent intent = context.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
         double batteryLevel = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0) / 100.0;
-
         log.info("BatteryLevel is:" + batteryLevel + " action:" + action);
-
-        JSONObject obj = new JSONObject();
-        try {
-            obj.put("level", batteryLevel);
-            obj.put("source", action);
-
-        } catch (JSONException e) {}
-
     }
 }

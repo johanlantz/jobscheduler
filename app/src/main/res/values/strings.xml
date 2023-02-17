@@ -4,9 +4,9 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
+    <string name="next">Start JobScheduler</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Press Next to start and mail icon to send logfile</string>
+    <string name="hello_first_fragment">Press button to start and mail icon to send logfile</string>
     <string name="hello_second_fragment">JobScheduler running. Arg: %1$s</string>
 </resources>

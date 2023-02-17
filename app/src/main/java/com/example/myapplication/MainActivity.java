@@ -63,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 share.addFlags(
                         Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 startActivity(Intent.createChooser(share, "Share file"));
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
             }
         });
     }
