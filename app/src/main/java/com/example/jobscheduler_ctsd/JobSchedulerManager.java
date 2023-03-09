@@ -1,11 +1,9 @@
-package com.example.myapplication;
+package com.example.jobscheduler_ctsd;
 
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
-
-import org.json.JSONObject;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -22,7 +20,7 @@ public class JobSchedulerManager {
         if(!(getPendingJobs(context)).isEmpty()) {
             log.info("JobScheduler already has jobs scheduled, they will be rescheduled by the system.");
         }
-        com.example.myapplication.Logger.start(context);
+        com.example.jobscheduler_ctsd.Logger.start(context);
         batterySensor = BatterySensor.getSensor(context);
         batterySensor.start();
         scheduleSensorJob(context);

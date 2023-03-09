@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.jobscheduler_ctsd;
 
 import android.content.ClipData;
 import android.content.Intent;
@@ -6,11 +6,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Environment;
 import android.view.View;
 
 import androidx.core.content.FileProvider;
@@ -19,7 +16,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.myapplication.databinding.ActivityMainBinding;
+import com.example.jobscheduler_ctsd.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Uri logUri;
-                File logFile = new File(getFilesDir(), "logfile.txt");
+                File logFile = new File(getFilesDir(), "my_logs/logfile.txt");
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    logUri = FileProvider.getUriForFile(getApplicationContext(), "com.example.myapplication.fileprovider", logFile);
+                    logUri = FileProvider.getUriForFile(getApplicationContext(), "com.example.jobscheduler_ctsd.fileprovider", logFile);
                 } else {
                     logUri = Uri.fromFile(logFile);
                 }

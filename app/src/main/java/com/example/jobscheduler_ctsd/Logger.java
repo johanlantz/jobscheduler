@@ -1,12 +1,7 @@
 //  Copyright © Koa Health B.V. All rights reserved.
-package com.example.myapplication;
+package com.example.jobscheduler_ctsd;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
-
-import androidx.core.content.FileProvider;
 
 import java.io.File;
 import java.io.IOException;
@@ -77,6 +72,10 @@ public class Logger {
         logDir.mkdirs();
         //File logDir = new File(context.getFilesDir() + File.separator);
 
+        //File file = new File(context.getFilesDir() + File.separator + "my_logs/logfile.txt");
+        //if(file.exists()) {
+        //    long l = file.length();
+        //}
 
         if (!isFileHandlerActive()) {
             String filePath = logDir + "/logfile.txt";

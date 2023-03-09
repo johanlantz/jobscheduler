@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.jobscheduler_ctsd;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import java.util.logging.Logger;
 
 

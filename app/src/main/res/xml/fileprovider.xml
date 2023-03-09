@@ -3,7 +3,7 @@
     <!-- See table below.  The external-files-path DOES NOT require external storage permissions. -->
     <files-path
         name="my_logs"
-        path="." />
+        path="my_logs" />
 
     <!--Uncomment below to share the entire application specific directory -->
     <!--<external-path name="all_dirs" path="."/>-->
