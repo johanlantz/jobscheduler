@@ -20,6 +20,7 @@ public class JobSchedulerService extends JobService {
     @Override
     public void onCreate() {
         super.onCreate();
+        com.example.jobscheduler_ctsd.Logger.configure(getApplicationContext());
         log.info("Creating new JobSchedulerService instance");
     }
 

@@ -63,19 +63,13 @@ public class Logger {
         return fileHandlerActive;
     }
 
-    public static void start(Context context) {
+    public static void configure(Context context) {
         Handler logHandler;
         log.getParent().setLevel(Level.FINE);
         final int MAX_LOG_COUNT = 1;
 
         File logDir = new File(context.getFilesDir() + File.separator + "my_logs/");
         logDir.mkdirs();
-        //File logDir = new File(context.getFilesDir() + File.separator);
-
-        //File file = new File(context.getFilesDir() + File.separator + "my_logs/logfile.txt");
-        //if(file.exists()) {
-        //    long l = file.length();
-        //}
 
         if (!isFileHandlerActive()) {
             String filePath = logDir + "/logfile.txt";

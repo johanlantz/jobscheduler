@@ -23,6 +23,7 @@ public class BatterySensor  {
     public static synchronized BatterySensor getSensor(final Context context) {
         if (instance == null) {
             instance = new BatterySensor(context);
+            instance.start();
         }
         return instance;
     }

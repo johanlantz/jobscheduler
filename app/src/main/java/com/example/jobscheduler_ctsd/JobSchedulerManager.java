@@ -20,9 +20,6 @@ public class JobSchedulerManager {
         if(!(getPendingJobs(context)).isEmpty()) {
             log.info("JobScheduler already has jobs scheduled, they will be rescheduled by the system.");
         }
-        com.example.jobscheduler_ctsd.Logger.start(context);
-        batterySensor = BatterySensor.getSensor(context);
-        batterySensor.start();
         scheduleSensorJob(context);
     }
 
