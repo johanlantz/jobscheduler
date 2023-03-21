@@ -1,4 +1,4 @@
-package com.example.jobscheduler_ctsd;
+package com.johanlantz.jobscheduler_ctsd;
 
 import android.content.ClipData;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.jobscheduler_ctsd.databinding.ActivityMainBinding;
+import com.johanlantz.jobscheduler_ctsd.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        com.example.jobscheduler_ctsd.Logger.configure(getApplicationContext());
+        com.johanlantz.jobscheduler_ctsd.Logger.configure(getApplicationContext());
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 File logFile = new File(getFilesDir(), "my_logs/logfile.txt");
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    logUri = FileProvider.getUriForFile(getApplicationContext(), "com.example.jobscheduler_ctsd.fileprovider", logFile);
+                    logUri = FileProvider.getUriForFile(getApplicationContext(), "com.johanlantz.jobscheduler_ctsd.fileprovider", logFile);
                 } else {
                     logUri = Uri.fromFile(logFile);
                 }

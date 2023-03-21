@@ -1,4 +1,4 @@
-package com.example.jobscheduler_ctsd;
+package com.johanlantz.jobscheduler_ctsd;
 
 import org.junit.Test;
 

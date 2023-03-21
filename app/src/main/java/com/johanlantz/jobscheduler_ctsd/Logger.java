@@ -1,5 +1,4 @@
-//  Copyright © Koa Health B.V. All rights reserved.
-package com.example.jobscheduler_ctsd;
+package com.johanlantz.jobscheduler_ctsd;
 
 import android.content.Context;
 

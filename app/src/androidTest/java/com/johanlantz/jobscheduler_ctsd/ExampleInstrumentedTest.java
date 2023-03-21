@@ -1,4 +1,4 @@
-package com.example.jobscheduler_ctsd;
+package com.johanlantz.jobscheduler_ctsd;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.jobscheduler_ctsd", appContext.getPackageName());
+        assertEquals("com.johanlantz.jobscheduler_ctsd", appContext.getPackageName());
     }
 }

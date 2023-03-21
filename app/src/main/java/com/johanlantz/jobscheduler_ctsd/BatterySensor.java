@@ -1,4 +1,4 @@
-package com.example.jobscheduler_ctsd;
+package com.johanlantz.jobscheduler_ctsd;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.example.jobscheduler_ctsd;
+package com.johanlantz.jobscheduler_ctsd;
 import android.app.job.JobParameters;
 import android.app.job.JobService;
 import java.util.concurrent.Executors;
@@ -20,7 +20,7 @@ public class JobSchedulerService extends JobService {
     @Override
     public void onCreate() {
         super.onCreate();
-        com.example.jobscheduler_ctsd.Logger.configure(getApplicationContext());
+        com.johanlantz.jobscheduler_ctsd.Logger.configure(getApplicationContext());
         log.info("Creating new JobSchedulerService instance");
     }
 

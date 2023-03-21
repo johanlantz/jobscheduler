@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.jobscheduler_ctsd.FirstFragment"
+        android:name="com.johanlantz.jobscheduler_ctsd.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.jobscheduler_ctsd.SecondFragment"
+        android:name="com.johanlantz.jobscheduler_ctsd.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 

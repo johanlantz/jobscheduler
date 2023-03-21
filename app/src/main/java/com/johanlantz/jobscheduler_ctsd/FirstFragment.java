@@ -1,4 +1,4 @@
-package com.example.jobscheduler_ctsd;
+package com.johanlantz.jobscheduler_ctsd;
 
 import android.app.job.JobInfo;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.jobscheduler_ctsd.databinding.FragmentFirstBinding;
+import com.johanlantz.jobscheduler_ctsd.databinding.FragmentFirstBinding;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.jobscheduler_ctsd;
+package com.johanlantz.jobscheduler_ctsd;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.jobscheduler_ctsd.databinding.FragmentSecondBinding;
+import com.johanlantz.jobscheduler_ctsd.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
 

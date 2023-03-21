@@ -6,7 +6,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.jobscheduler_ctsd"
+        applicationId "com.johanlantz.jobscheduler_ctsd"
         minSdk 23
         targetSdk 33
         versionCode 1
